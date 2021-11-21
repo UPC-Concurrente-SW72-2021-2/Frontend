@@ -1,0 +1,84 @@
+{
+  "pasien": [
+    {
+      "id_persona": 1,
+      "id_vacunados_covid19": 11,
+      "id_eess": 2,
+      "id_centro_vacunacion": 2,
+      "id_vacuna": 5,
+      "id_grupo_riesgo": 2,
+      "dosis": 2,
+      "edad": 72
+    },
+    {
+      "id_persona": 2,
+      "id_vacunados_covid19": 17,
+      "id_eess": 4,
+      "id_centro_vacunacion": 9,
+      "id_vacuna": 6,
+      "id_grupo_riesgo": 12,
+      "dosis": 2,
+      "edad": 72
+    },
+    {
+      "id_persona": 3,
+      "id_vacunados_covid19": 10,
+      "id_eess": 6,
+      "id_centro_vacunacion": 12,
+      "id_vacuna": 3,
+      "id_grupo_riesgo": 6,
+      "dosis": 1,
+      "edad": 50
+    },
+    {
+      "id_persona": 4,
+      "id_vacunados_covid19": 9,
+      "id_eess": 2,
+      "id_centro_vacunacion": 1,
+      "id_vacuna": 3,
+      "id_grupo_riesgo": 2,
+      "dosis": 1,
+      "edad": 19
+    },
+    {
+      "id_persona": 5,
+      "id_vacunados_covid19": 3,
+      "id_eess": 2,
+      "id_centro_vacunacion": 2,
+      "id_vacuna": 1,
+      "id_grupo_riesgo": 2,
+      "dosis": 1,
+      "edad": 34
+    },
+    {
+      "id_persona": 6,
+      "id_vacunados_covid19": 6,
+      "id_eess": 2,
+      "id_centro_vacunacion": 13,
+      "id_vacuna": 1,
+      "id_grupo_riesgo": 2,
+      "dosis": 2,
+      "edad": 36
+    },
+    {
+      "id_persona": 7,
+      "id_vacunados_covid19": 10,
+      "id_eess": 2,
+      "id_centro_vacunacion": 2,
+      "id_vacuna": 5,
+      "id_grupo_riesgo": 5,
+      "dosis": 1,
+      "edad": 25
+    },
+    {
+      "id_persona": 8,
+      "id_vacunados_covid19": 18,
+      "id_eess": 12,
+      "id_centro_vacunacion": 19,
+      "id_vacuna": 4,
+      "id_grupo_riesgo": 9,
+      "dosis": 1,
+      "edad": 15
+    }
+  ]
+}
