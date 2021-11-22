@@ -1,20 +1,22 @@
 export class Pasien {
-    id_persona : number;
-    id_vacunados_covid19 : number;
-    id_eess : number;
-    id_centro_vacunacion : number;
-    id_vacuna : number;
-    id_grupo_riesgo : number;
+    id : number;
+    persona: number;
+    vacunadosCovid : number;
+    eess : number;
+    centroVacunacion : number;
+    vacuna : number;
+    grupoRiesgo : number;
     dosis : number;
     edad : number;
 
     constructor(){
-        this.id_persona = 0;
-        this.id_vacunados_covid19 = 0;
-        this.id_eess = 0;
-        this.id_centro_vacunacion = 0;
-        this.id_vacuna = 0;
-        this.id_grupo_riesgo = 0;
+        this.id = 0;
+        this.persona=0;
+        this.vacunadosCovid = 0;
+        this.eess = 0;
+        this.centroVacunacion = 0;
+        this.vacuna = 0;
+        this.grupoRiesgo = 0;
         this.dosis = 0;
         this.edad = 0;
     }

@@ -9,7 +9,7 @@ import { Pasien } from './model/pasien';
 
 export class PasienService {
 
-  private baseURL= 'http://localhost:3000/pasien';
+  private baseURL= 'http://localhost/persons';
 
   constructor( private http: HttpClient) { }
 
@@ -17,16 +17,12 @@ export class PasienService {
     return this.http.get(`${this.baseURL}`);
   }
 
-  deletePasien(id_persona: number): Observable<any>{
-    return this.http.delete(`${this.baseURL}/${id_persona}`);
-  }
-
   getPasienByEdad(edad: number) : Observable<any>{
     return this.http.get(`${this.baseURL}/searchByEdad/${edad}`);
   }
   
-  getPasienById(id_persona: number) : Observable<any>{
-    return this.http.get(`${this.baseURL}/searchById/${id_persona}`);
+  getPasienById(id: number) : Observable<any>{
+    return this.http.get(`${this.baseURL}/searchById/${id}`);
   }
 
   getPasienByDosis(dosis: number) : Observable<any>{

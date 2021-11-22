@@ -8,7 +8,7 @@
         </div>
         <div class="col-auto">
             <input type="text" class="form-control" id="edad" 
-            name="edad" required [(ngModel)]="edad" placeholder="Search Pasien" />
+            name="edad" required [(ngModel)]="edad" placeholder="Search Pasient" />
         </div>
         <div class="col-auto">
             <button type="submit" class="btn btn-success">Search</button>
@@ -22,6 +22,7 @@
             <th scope="col">Id_Persona</th>
             <th scope="col">Id_Vacunados_Covid19</th>
             <th scope="col">Id_EESS</th>
+            <th scope="col">Id_Vacuna</th>
             <th scope="col">Id_Centro_Vacunacion</th>
             <th scope="col">Id_Grupo_Riesgo</th>
             <th scope="col">Dosis</th>
@@ -31,14 +32,17 @@
     <tbody>
         <ng-container *ngFor="let pasien of pasiens">
             <tr>
-                <th scope="row">{{ pasien.id_persona }}</th>
-                <td>{{pasien.id_vacunados_covid19}}</td>
-                <td>{{pasien.id_eess}}</td>
-                <td>{{pasien.id_centro_vacunacion}}</td>
-                <td>{{pasien.id_grupo_riesgo}}</td>
+                <th scope="row">{{ pasien.id }}</th>
+                <td>{{pasien.persona}}</td>
+                <td>{{pasien.vacunadosCovid}}</td>
+                <td>{{pasien.eess}}</td>
+                <td>{{pasien.vacuna}}</td>
+                <td>{{pasien.centroVacunacion}}</td>
+                <td>{{pasien.grupoRiesgo}}</td>
                 <td>{{pasien.dosis}}</td>
                 <td>{{pasien.edad}}</td>                
             </tr>
         </ng-container>
     </tbody>
 </table>
+

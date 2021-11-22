@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FindPasienComponent } from './find-pasien/find-pasien.component'
+//import { FindPasienComponent } from './find-pasien/find-pasien.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ListPasienComponent } from './list-pasien/list-pasien.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FindPasienComponent,
+   // FindPasienComponent,
     ListPasienComponent
   ],
   imports: [

@@ -22,11 +22,6 @@ export class ListPasienComponent implements OnInit {
     .subscribe(pasiens=>this.pasiens=pasiens);
   }
 
-  deletePasien(pasien: Pasien){
-    this.pasienService.deletePasien(pasien.id_persona)
-    .subscribe(data=>{this.loadDataPasiens();})
-  }
-
   searchPasienByEdad(){
     if(this.edad){
       this.pasienService.getPasienByEdad(this.edad)
