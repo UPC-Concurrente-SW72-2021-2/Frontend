@@ -12,7 +12,7 @@ import { Person } from '../../models/person';
   providedIn: 'root',
 })
 export class PersonApiService {
-  basePath = 'http://localhost/person';
+  basePath = 'http://localhost/persons';
 
   constructor(private http: HttpClient) {}
 
@@ -38,7 +38,7 @@ export class PersonApiService {
     console.log(JSON.stringify(item));
     return this.http
       .post<Person>(
-        `${this.basePath}/Person`,
+        `${this.basePath}`,
         JSON.stringify(item),
         this.httpOptions
       )
@@ -46,7 +46,7 @@ export class PersonApiService {
   }
   public getPerson(): Observable<any> {
     return this.http
-      .get<Person>(`${this.basePath}/Person`)
+      .get<Person>(`${this.basePath}`)
       .pipe(retry(0), catchError(this.handleError));
   }
 }

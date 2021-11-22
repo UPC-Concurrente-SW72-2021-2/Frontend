@@ -20,6 +20,26 @@
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <div class="form-group mb-3 px-2">
+              <h6>Id de Persona</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="establecimiento"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.persona"
+                />
+              </label>
+              <h6>Id de Vacunado</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="establecimiento"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.vacunadosCovid"
+                />
+              </label>
               <h6>Establecimiento de Salud</h6>
               <label class="mb-3">
                 <input
@@ -27,7 +47,7 @@
                   name="establecimiento"
                   type="number"
                   placeholder="Ingresar lugar"
-                  [(ngModel)]="personModel.id_eess"
+                  [(ngModel)]="personModel.eess"
                 />
               </label>
             </div>
@@ -40,29 +60,24 @@
                   name="centroVacunacion"
                   type="number"
                   placeholder="Ingresar lugar"
-                  [(ngModel)]="personModel.id_centro_vacunacion"
+                  [(ngModel)]="personModel.centroVacunacion"
                 />
               </label>
             </div>
 
             <div class="form-group mb-3 px-2">
-              <h6>Vacuna</h6>
-              <label>
-                <select
-                  class="custom-select my-1 mr-sm-2 mb-3"
-                  name="vaccine"
-                  [(ngModel)]="personModel.id_vacuna"
-                >
-                  >
-                  <option
-                    *ngFor="let vaccine of vaccines; let i = index"
-                    value="{{ i }}"
-                  >
-                    {{ vaccine }}
-                  </option>
-                </select>
+              <h6>Id de Vacuna</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="centroVacunacion"
+                  type="number"
+                  placeholder="Ingresar vacuna"
+                  [(ngModel)]="personModel.vacuna"
+                />
               </label>
             </div>
+
           </div>
 
           <div class="col-sm-12 col-md-6">
@@ -74,37 +89,24 @@
                   type="number"
                   placeholder=""
                   name="grupoRiesgo"
-                  [(ngModel)]="personModel.id_grupo_riesgo"
+                  [(ngModel)]="personModel.grupoRiesgo"
                 />
               </label>
             </div>
 
-            <div class="form-check mb-3 px-2">
+            <div class="form-group mb-3 px-2">
               <h6>Dosis</h6>
-              <div class="form-check">
+              <label class="mb-3">
                 <input
-                  class="form-check-input"
-                  type="radio"
-                  id="first"
-                  name="dosis"
-                  value="1"
+                  class="form-control"
+                  name="centroVacunacion"
+                  type="number"
+                  placeholder="Ingresar lugar"
                   [(ngModel)]="personModel.dosis"
                 />
-                <label class="form-check-label">Primera</label>
-              </div>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  id="second"
-                  name="dosis"
-                  value="2"
-                  [(ngModel)]="personModel.dosis"
-                />
-                <label class="form-check-label">Segunda</label>
-              </div>
+              </label>
             </div>
+
 
             <div class="form-group mb-3 px-2">
               <h6>Edad</h6>
