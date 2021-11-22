@@ -9,7 +9,7 @@ import { PersonApiService } from '../../services/person/person-api.service';
 })
 export class FormInputComponent implements OnInit {
   vaccines = ['Pfizer', 'Astrazeneca', 'Sinopharm'];
-  personModel = new Person(1, 0, 0, 0, 0, 0, 0, 0);
+  personModel = new Person(1999, 999, 7897, 655, 3, 123, 2, 90);
 
   constructor(private personSevice: PersonApiService) {}
 
@@ -18,8 +18,10 @@ export class FormInputComponent implements OnInit {
   onSubmit() {
     console.log(this.personModel);
     this.personSevice.addPerson(this.personModel).subscribe(
-      (data) => window.alert(data),
+      (data) => window.alert("Usuario agregado"),
       (error) => window.alert(error)
     );
   }
+
+
 }
