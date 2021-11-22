@@ -28,7 +28,7 @@ export class ListPasienComponent implements OnInit {
   }
 
   searchPasienByEdad(){
-    if(this.edad!=0){
+    if(this.edad){
       this.pasienService.getPasienByEdad(this.edad)
       .subscribe(pasiens=>this.pasiens=pasiens);
     }

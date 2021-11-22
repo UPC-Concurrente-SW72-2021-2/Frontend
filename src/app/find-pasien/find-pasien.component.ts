@@ -22,30 +22,30 @@ export class FindPasienComponent implements OnInit {
 
   constructor(private pasienService: PasienService) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
+    searchPasienByEdad(){
+      this.pasienService.getPasienByEdad(this.edad)
+      .subscribe(pasiens => {
+        console.log(pasiens)
+        this.pasiens=pasiens});
+    }
+  
+    searchPasienById(){
+      this.pasienService.getPasienById(this.id_persona)
+      .subscribe(pasiens => {
+        console.log(pasiens)
+        this.pasiens=pasiens});
+    }
+  
+    searchPasienByDosis(){
+      this.pasienService.getPasienByDosis(this.dosis)
+      .subscribe(pasiens => {
+        console.log(pasiens)
+        this.pasiens=pasiens});
+    }
+  
 
-  searchPasienByEdad(){
-    this.pasienService.getPasienByEdad(this.edad)
-    .subscribe(pasiens => {
-      console.log(pasiens)
-      this.pasiens=pasiens});
-  }
-
-  searchPasienById(){
-    this.pasienService.getPasienById(this.id_persona)
-    .subscribe(pasiens => {
-      console.log(pasiens)
-      this.pasiens=pasiens});
-  }
-
-  searchPasienByDosis(){
-    this.pasienService.getPasienByDosis(this.dosis)
-    .subscribe(pasiens => {
-      console.log(pasiens)
-      this.pasiens=pasiens});
-  }
+ 
 
 
 }
