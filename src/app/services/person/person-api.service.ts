@@ -44,7 +44,8 @@ export class PersonApiService {
       )
       .pipe(retry(0), catchError(this.handleError));
   }
-  public getPerson(): Observable<any> {
+
+  public getPersons(): Observable<any> {
     return this.http
       .get<Person>(`${this.basePath}/Person`)
       .pipe(retry(0), catchError(this.handleError));

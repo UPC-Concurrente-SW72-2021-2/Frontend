@@ -7,12 +7,14 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { FormInputComponent } from './pages/form-input/form-input.component';
 import { CommonModule } from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
+import { NavbarComponent } from './pages/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    FormInputComponent
+    FormInputComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
