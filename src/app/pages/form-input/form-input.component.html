@@ -1,80 +1,126 @@
-<div class="container ">
-
+<div class="container">
   <form #userForm="ngForm" (ngSubmit)="onSubmit()">
-    {{vaccinatedModel | json }}
+    {{ personModel | json }}
     <div class="card w-75 mx-auto mb-5">
-    <img class="card-img-top" src="https://summitcountyhealth.org/wp-content/uploads/2021/01/Vaccine-Header-2.png" alt="Card image cap">
+      <img
+        class="card-img-top"
+        src="https://summitcountyhealth.org/wp-content/uploads/2021/01/Vaccine-Header-2.png"
+        alt="Card image cap"
+      />
 
-    <div class="card-header bg-light">
-      <h3 class="text-center">Formulario de vacunados</h3>
-    </div>
-    <div class="card-body">
-      <h5 class="text-black-50 pb-3">Ingrese los datos correspondientes para completar un registro de persona vacunada: </h5>
+      <div class="card-header bg-light">
+        <h3 class="text-center">Formulario de vacunados</h3>
+      </div>
+      <div class="card-body">
+        <h5 class="text-black-50 pb-3">
+          Ingrese los datos correspondientes para completar un registro de
+          persona vacunada:
+        </h5>
 
-      <div class="row">
-        <div class="col-sm-12 col-md-6 ">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="form-group mb-3 px-2">
+              <h6>Establecimiento de Salud</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="establecimiento"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.id_eess"
+                />
+              </label>
+            </div>
 
-          <div class="form-group mb-3 px-2">
-            <h6>Establecimiento de Salud</h6>
-            <label class="mb-3">
-              <input class="form-control" name="establecimiento" type="number" placeholder="Ingresar lugar" [(ngModel)]="vaccinatedModel.id_eess">
-            </label>
+            <div class="form-group mb-3 px-2">
+              <h6>Centro de Vacunacion</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="centroVacunacion"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.id_centro_vacunacion"
+                />
+              </label>
+            </div>
+
+            <div class="form-group mb-3 px-2">
+              <h6>Vacuna</h6>
+              <label>
+                <select
+                  class="custom-select my-1 mr-sm-2 mb-3"
+                  name="vaccine"
+                  [(ngModel)]="personModel.id_vacuna"
+                >
+                  >
+                  <option
+                    *ngFor="let vaccine of vaccines; let i = index"
+                    value="{{ i }}"
+                  >
+                    {{ vaccine }}
+                  </option>
+                </select>
+              </label>
+            </div>
           </div>
 
-          <div class="form-group mb-3 px-2">
-            <h6>Centro de Vacunacion</h6>
-            <label class="mb-3">
-              <input class="form-control" name="centroVacunacion" type="number" placeholder="Ingresar lugar" [(ngModel)]="vaccinatedModel.id_centro_vacunacion">
-            </label>
-          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="form-group mb-3 px-2">
+              <h6>Grupo de riesgo</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder=""
+                  name="grupoRiesgo"
+                  [(ngModel)]="personModel.id_grupo_riesgo"
+                />
+              </label>
+            </div>
 
-          <div class="form-group mb-3 px-2">
-            <h6>Vacuna</h6>
-            <label>
-              <select class="custom-select my-1 mr-sm-2 mb-3" name="vaccine" [(ngModel)]="vaccinatedModel.id_vacuna"> >
-                <option *ngFor="let vaccine of vaccines; let i=index" value="{{i}}" >
-                  {{ vaccine }}
-                </option>
-              </select>
-            </label>
+            <div class="form-check mb-3 px-2">
+              <h6>Dosis</h6>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="first"
+                  name="dosis"
+                  value="1"
+                  [(ngModel)]="personModel.dosis"
+                />
+                <label class="form-check-label">Primera</label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="second"
+                  name="dosis"
+                  value="2"
+                  [(ngModel)]="personModel.dosis"
+                />
+                <label class="form-check-label">Segunda</label>
+              </div>
+            </div>
+
+            <div class="form-group mb-3 px-2">
+              <h6>Edad</h6>
+              <label class="mb-3">
+                <input
+                  type="number"
+                  placeholder="00"
+                  name="edad"
+                  [(ngModel)]="personModel.edad"
+                />
+              </label>
+            </div>
           </div>
+          <button class="btn btn-primary">ENVIAR</button>
         </div>
-
-        <div class="col-sm-12 col-md-6">
-
-          <div class="form-group mb-3 px-2">
-            <h6>Grupo de riesgo</h6>
-            <label class="mb-3">
-              <input class="form-control" type="number" placeholder="" name="grupoRiesgo" [(ngModel)]="vaccinatedModel.id_grupo_riesgo">
-            </label>
-          </div>
-
-          <div class="form-check mb-3 px-2">
-            <h6>Dosis</h6>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" id="first" name="dosis" value="1" [(ngModel)]="vaccinatedModel.dosis">
-              <label class="form-check-label">Primera</label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input"  type="radio" id="second" name="dosis" value="2" [(ngModel)]="vaccinatedModel.dosis">
-              <label class="form-check-label">Segunda</label>
-            </div>
-          </div>
-
-          <div class="form-group mb-3 px-2">
-            <h6>Edad</h6>
-            <label class="mb-3" >
-              <input type="number" placeholder="00" name="edad" [(ngModel)]="vaccinatedModel.edad">
-            </label>
-          </div>
-
-      </div>
-        <button class="btn btn-primary">ENVIAR</button>
-
       </div>
     </div>
-  </div>
   </form>
-
 </div>

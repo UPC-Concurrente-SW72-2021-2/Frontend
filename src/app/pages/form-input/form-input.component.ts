@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Vaccinated} from "../../models/vaccinated";
-import {VaccinatedApiService} from "../../services/vaccinated/vaccinated-api.service";
+import { Person } from '../../models/person';
+import { PersonApiService } from '../../services/person/person-api.service';
 
 @Component({
   selector: 'app-form-input',
@@ -8,30 +8,18 @@ import {VaccinatedApiService} from "../../services/vaccinated/vaccinated-api.ser
   styleUrls: ['./form-input.component.css'],
 })
 export class FormInputComponent implements OnInit {
+  vaccines = ['Pfizer', 'Astrazeneca', 'Sinopharm'];
+  personModel = new Person(1, 0, 0, 0, 0, 0, 0, 0);
 
+  constructor(private personSevice: PersonApiService) {}
 
-  vaccines = ['Pfizer','Astrazeneca','Sinopharm']
-  vaccinatedModel =
-    new Vaccinated(1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0);
-
-  constructor(private vaccinatedSevice : VaccinatedApiService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log(this.vaccinatedModel)
-    this.vaccinatedSevice.addVaccinated(this.vaccinatedModel).subscribe(
-      data => window.alert(data),
-      error => window.alert(error)
+    console.log(this.personModel);
+    this.personSevice.addPerson(this.personModel).subscribe(
+      (data) => window.alert(data),
+      (error) => window.alert(error)
     );
   }
-
 }

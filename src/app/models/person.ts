@@ -1,4 +1,4 @@
-export class Vaccinated {
+export class Person {
   constructor(
     public id_persona: number,
     public id_vacunados_covid19: number,
