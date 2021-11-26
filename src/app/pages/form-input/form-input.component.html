@@ -1,0 +1,128 @@
+<div class="container">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    {{ personModel | json }}
+    <div class="card w-75 mx-auto mb-5">
+      <img
+        class="card-img-top"
+        src="https://summitcountyhealth.org/wp-content/uploads/2021/01/Vaccine-Header-2.png"
+        alt="Card image cap"
+      />
+
+      <div class="card-header bg-light">
+        <h3 class="text-center">Formulario de vacunados</h3>
+      </div>
+      <div class="card-body">
+        <h5 class="text-black-50 pb-3">
+          Ingrese los datos correspondientes para completar un registro de
+          persona vacunada:
+        </h5>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="form-group mb-3 px-2">
+              <h6>Id de Persona</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="establecimiento"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.persona"
+                />
+              </label>
+              <h6>Id de Vacunado</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="establecimiento"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.vacunadosCovid"
+                />
+              </label>
+              <h6>Establecimiento de Salud</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="establecimiento"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.eess"
+                />
+              </label>
+            </div>
+
+            <div class="form-group mb-3 px-2">
+              <h6>Centro de Vacunacion</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="centroVacunacion"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.centroVacunacion"
+                />
+              </label>
+            </div>
+
+            <div class="form-group mb-3 px-2">
+              <h6>Id de Vacuna</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="centroVacunacion"
+                  type="number"
+                  placeholder="Ingresar vacuna"
+                  [(ngModel)]="personModel.vacuna"
+                />
+              </label>
+            </div>
+
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <div class="form-group mb-3 px-2">
+              <h6>Grupo de riesgo</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder=""
+                  name="grupoRiesgo"
+                  [(ngModel)]="personModel.grupoRiesgo"
+                />
+              </label>
+            </div>
+
+            <div class="form-group mb-3 px-2">
+              <h6>Dosis</h6>
+              <label class="mb-3">
+                <input
+                  class="form-control"
+                  name="centroVacunacion"
+                  type="number"
+                  placeholder="Ingresar lugar"
+                  [(ngModel)]="personModel.dosis"
+                />
+              </label>
+            </div>
+
+
+            <div class="form-group mb-3 px-2">
+              <h6>Edad</h6>
+              <label class="mb-3">
+                <input
+                  type="number"
+                  placeholder="00"
+                  name="edad"
+                  [(ngModel)]="personModel.edad"
+                />
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-primary">ENVIAR</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
